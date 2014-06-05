@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1024">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <title>Presentation</title>
+
+    <meta name="description" content="A nifty presentation made with Rhet Butler">
+    <meta name="author" content="Judson Lester">
+
+    <script src="javascript/rhet-present.js"></script>
+    <script src="javascript/keyboard-nav.js"></script>
+    <link href="stylesheets/google-open-sans.css" rel="stylesheet">
+<link href="stylesheets/rhet.css" rel="stylesheet">
+<link href="stylesheets/prez-local.css" rel="stylesheet">
+<link href="stylesheets/highlight/solarized_dark.css" rel="stylesheet">
+
+    <script type="text/javascript" src="assets/javascript/sockjs-0.2.1.js"></script>
+<script src="assets/javascript/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+  </head>
+
+  <body id="presentation">
+    <div class="rhet-butler root">
+      
+        <div class="rhet-butler slide    ">
+  <p>Unit Testing in JavaScript</p>
+</div>
+
+      
+        <div class="rhet-butler group">
+  
+    <div id="whoami" class="rhet-butler slide    ">
+  <p>Judson Lester</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>@judsonlester</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>github.com/nyarly</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p><img src="madhelm.png" alt=""></p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p><img src="lrdesign-logo.png" alt=""></p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>I do a lot of Ruby</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Also some JavaScript</p>
+</div>
+
+  
+</div>
+
+      
+        <div class="rhet-butler group">
+  
+    <div class="rhet-butler slide    ">
+  <p>Why Unit Testing?</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Automated Testing</p>
+</div>
+
+  
+    <div class="rhet-butler group">
+  
+    <div class="rhet-butler group">
+  
+    <div class="rhet-butler slide    ">
+  <p>The development cycle<br>
+<img src="build-cycle.jpg" alt=""></p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Write code<br>
+<img src="build-cycle-write.jpg" alt=""></p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Compile<br>
+<img src="build-cycle-build.jpg" alt=""></p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Debug<br>
+<img src="build-cycle-debug.jpg" alt=""></p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Back to coding<br>
+<img src="build-cycle-write.jpg" alt=""></p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Repeat until finished</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Cycles are for machines</p>
+</div>
+
+  
+</div>
+
+  
+    <div class="rhet-butler group">
+  
+    <div class="rhet-butler slide    ">
+  <p>Do you have regressions?</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Tests can help</p>
+</div>
+
+  
+</div>
+
+  
+    <div class="rhet-butler group">
+  
+    <div class="rhet-butler slide    ">
+  <p>“Tests are extra code, so extra time”</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Saving manual debug</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Coding time is mostly design</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Coding with tests takes <em>less</em> time</p>
+</div>
+
+  
+</div>
+
+  
+    <div class="rhet-butler group">
+  
+    <div class="rhet-butler slide    ">
+  <p>Software process</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>An executable design</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>A <em>verifiable</em> design</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Team communication</p>
+</div>
+
+  
+</div>
+
+  
+</div>
+
+  
+    <div class="rhet-butler group">
+  
+    <div class="rhet-butler slide    ">
+  <p>How?</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Test anatomy</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <ul>
+	<li class="rhet-butler item cue-1">Setup</li>
+	<li class="rhet-butler item cue-2">Exercise</li>
+	<li class="rhet-butler item cue-3">Verify</li>
+	<li class="rhet-butler item cue-4">Teardown</li>
+</ul>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Test suites</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>There are tools</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Lots of tools</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <ul>
+	<li>Here’s a set that work</li>
+	<li class="rhet-butler item cue-1">Jasmine</li>
+	<li class="rhet-butler item cue-2">Karma</li>
+	<li class="rhet-butler item cue-3">Sinon.JS</li>
+</ul>
+</div>
+
+  
+</div>
+
+  
+    <div class="rhet-butler group">
+  
+    <div class="rhet-butler slide    ">
+  <p>Jasmine</p>
+</div>
+
+  
+    <div class="rhet-butler slide code code  note-code ">
+  <pre><code class="javascript"><span class="rhet-butler item cue-1">describe("Presenter", function(){</span>
+  var <span class="rhet-butler item cue-3">presenter</span>;
+
+  <span class="rhet-butler item cue-2">beforeEach</span>(function(){
+    <span class="rhet-butler item cue-3">presenter</span> =
+      new rhetButler.Presenter(
+                        document
+                      );
+  })
+
+  <span class="rhet-butler item cue-4">it</span>("should make a presenter", function(){
+    <span class="rhet-butler item cue-5">expect</span>(<span class="rhet-butler item cue-3">presenter</span>).<span class="rhet-butler item cue-6">not.toBe(null);</span>
+  })
+});
+</code></pre>
+</div>
+
+  
+</div>
+
+  
+    <div class="rhet-butler group">
+  
+    <div class="rhet-butler slide    ">
+  <p>Karma</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p><img src="karma-running.png" alt=""></p>
+</div>
+
+  
+</div>
+
+  
+    <div class="rhet-butler group">
+  
+    <div class="rhet-butler slide    ">
+  <p>Sinon.JS</p>
+</div>
+
+  
+    <div class="rhet-butler slide code code  note-code ">
+  <pre><code class="javascript">var <span class="rhet-butler item cue-2">clock</span>;
+
+beforeEach(function () {
+  <span class="rhet-butler item cue-3"><span class="rhet-butler item cue-2">clock</span></span> = <span class="rhet-butler item cue-1">sinon.useFakeTimers();</span>
+});
+
+afterEach(function () {
+  <span class="rhet-butler item cue-3">clock.restore();</span>
+});
+</code></pre>
+</div>
+
+  
+    <div class="rhet-butler slide code code  note-code ">
+  <pre><code class="javascript">it("calls back after 100ms": function () {
+  var <span class="rhet-butler item cue-2">callback</span> = <span class="rhet-butler item cue-1">sinon.spy();</span>
+  setTimeout(100, <span class="rhet-butler item cue-2">callback</span>);
+
+  expect(<span class="rhet-butler item cue-3">callback</span>.<span class="rhet-butler item cue-5">notCalled</span>).to.beTrue();
+  <span class="rhet-butler item cue-4">clock.tick(100);</span>
+  expect(<span class="rhet-butler item cue-3">callback</span>.<span class="rhet-butler item cue-5">calledOnce</span>).to.beTrue();
+});
+</code></pre>
+</div>
+
+  
+</div>
+
+  
+    <div class="rhet-butler group">
+  
+    <div class="rhet-butler slide    ">
+  <p>What to test?</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Guiding principles</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Complete</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Fast</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Focused</p>
+</div>
+
+  
+</div>
+
+  
+    <div class="rhet-butler group">
+  
+    <div class="rhet-butler slide    ">
+  <p>When to write tests</p>
+</div>
+
+  
+    <div class="rhet-butler group">
+  
+    <div class="rhet-butler slide    ">
+  <p>The most important thing a test can do</p>
+</div>
+
+  
+    <div id="tests-must-fail" class="rhet-butler slide    ">
+  <p><span class="caps">FAIL</span></p>
+</div>
+
+  
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Write tests first</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>When you know the interface</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>As soon as you notice they’re missing</p>
+</div>
+
+  
+</div>
+
+  
+</div>
+
+      
+        <div class="rhet-butler group">
+  
+    <div class="rhet-butler slide    ">
+  <p>Questions?</p>
+</div>
+
+  
+</div>
+
+      
+        <div class="rhet-butler group">
+  
+    <div class="rhet-butler slide    ">
+  <p>Bonus Material</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>Testing in Node.js</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <ul>
+	<li>I’ve heard of</li>
+	<li class="rhet-butler item cue-1">Expresso</li>
+	<li class="rhet-butler item cue-2">node-unit</li>
+	<li class="rhet-butler item cue-3">… but I don’t know</li>
+</ul>
+</div>
+
+  
+    <div class="rhet-butler group">
+  
+    <div class="rhet-butler slide    ">
+  <p>Coverage</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p>karma-coverage</p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p><img src="coverage-summary.png" alt=""></p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p><img src="coverage-file.png" alt=""></p>
+</div>
+
+  
+    <div class="rhet-butler slide    ">
+  <p><img src="coverage-focus.png" alt=""></p>
+</div>
+
+  
+</div>
+
+  
+</div>
+
+      
+    </div>
+
+    <div class="hint">
+      <p id="mouse-hint">Use a spacebar or arrow keys to navigate</p>
+      <p id="touch-hint" style="display:none">Tap on the left or right to navigate</p>
+    </div>
+
+    <script type="text/javascript">
+  var sock = new SockJS("/live/follower");
+
+  sock.onopen = function() {
+    console.log("open");
+  };
+
+  sock.onmessage = function(e) {
+    console.log("message", e.data);
+    presenter.moveTo(e.data);
+  };
+
+  sock.onclose = function() {
+    console.log("close");
+  };
+</script>
+
+    <script>
+        var presenter = new rhetButler.Presenter(document, window);
+        presenter.setup("presentation");
+        setupUserInterface(presenter);
+    </script>
+
+  </body>
+</html>

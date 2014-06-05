@@ -1,0 +1,196 @@
+- !slide "Unit Testing in JavaScript"
+- !group
+  - !include whoami.yaml
+  - !slide
+    content: I do a lot of Ruby
+    notes: Ruby community is super test focused
+  - !slide
+    content: Also some JavaScript
+    notes: So I've figured out a lot about testing JS
+- !group
+  - !slide Why Unit Testing?
+  - !slide
+    content: Automated Testing
+    notes: |
+      I want to avoid a lot of the dogma around testing,
+      and sadly a lot of the jargon can get bogged down
+      in dogma. Automatic tests are the key thing
+  - !group
+    - !group
+      - !slide |
+        The development cycle
+        !build-cycle.jpg!
+      - !slide |
+        Write code
+        !build-cycle-write.jpg!
+      - !slide |
+        Compile
+        !build-cycle-build.jpg!
+      - !slide |
+        Debug
+        !build-cycle-debug.jpg!
+      - !slide |
+        Back to coding
+        !build-cycle-write.jpg!
+      - !slide
+        content: Repeat until finished
+        notes: ... or dead
+      - !slide
+        content: Cycles are for machines
+        notes: |
+          Especially the "run and find bugs" part Writing the code is the part
+          that takes thought The rest is pretty much automatic So let's automate
+          that part
+    - !group
+      - !slide
+        content: Do you have regressions?
+        notes: |
+          You have a relationship with a bug
+          You fix one bug, and Next week: new bug
+          (or a feature) and the code for that
+          revives the other bug
+      - !slide
+        content: Tests can help
+        notes: |
+          Not only by shortening the time it takes to find the bug
+          but by shining a light on it, and making it easier to
+          puzzle out where the bug lives
+    - !group
+      - !slide "\"Tests are extra code, so extra time\""
+      - !slide
+        content: Saving manual debug
+        notes: |
+          Running tests takes so much less time than manual debugging,
+          that the time you spend writing them pays off almost right away
+      - !slide
+        content: Coding time is mostly design
+        notes: |
+          Test code costs the time to write it down because you've already
+          sunk the cost of designing the code. So it's much less than double
+          the time, even if you write twice as much total code
+      - !slide Coding with tests takes _less_ time
+    - !group
+      - !slide Software process
+      - !slide An executable design
+      - !slide "A _verifiable_ design"
+      - !slide Team communication
+  - !group
+    - !slide How?
+    - !slide Test anatomy
+    - !slide |
+      *(1) Setup
+      *(2) Exercise
+      *(3) Verify
+      *(4) Teardown
+    - !slide Test suites
+    - !slide
+      content: There are tools
+      notes: That's all a little highflown...
+    - !slide Lots of tools
+    - !slide |
+      * Here's a set that work
+      *(1) Jasmine
+      *(2) Karma
+      *(3) Sinon.JS
+  - !group
+    - !slide
+      Jasmine
+    - !slide
+      filters:
+        - !code javascript
+        - !cues
+      content: |
+        <span class="1">describe("Presenter", function(){</span>
+          var <span class="3">presenter</span>;
+
+          <span class="2">beforeEach</span>(function(){
+            <span class="3">presenter</span> =
+              new rhetButler.Presenter(
+                                document
+                              );
+          })
+
+          <span class="4">it</span>("should make a presenter", function(){
+            <span class="5">expect</span>(<span class="3">presenter</span>).<span class="6">not.toBe(null);</span>
+          })
+        });
+      notes: |
+        * Suite (only one test)
+        * Setup (no teardown)
+        * Object under test - note closure
+        * Test - "it should"
+        * Expectation
+        * Verification
+  - !group
+    - !slide Karma
+    - !slide |
+      !karma-running.png!
+  - !group
+    - !slide Sinon.JS
+    - !slide
+      filters:
+        - !code javascript
+        - !cues
+      content: |
+        var <span class="2">clock</span>;
+
+        beforeEach(function () {
+          <span class="3"><span class="2">clock</span></span> = <span class="1">sinon.useFakeTimers();</span>
+        });
+
+        afterEach(function () {
+          <span class="3">clock.restore();</span>
+        });
+    - !slide
+      filters:
+        - !code javascript
+        - !cues
+      content: |
+        it("calls back after 100ms": function () {
+          var <span class="2">callback</span> = <span class="1">sinon.spy();</span>
+          setTimeout(100, <span class="2">callback</span>);
+
+          expect(<span class="3">callback</span>.<span class="5">notCalled</span>).to.beTrue();
+          <span class="4">clock.tick(100);</span>
+          expect(<span class="3">callback</span>.<span class="5">calledOnce</span>).to.beTrue();
+        });
+
+  - !group
+    - !slide What to test?
+    - !slide Guiding principles
+    - !slide
+      content: Complete
+      notes: You want your tests to exercise your application - anything not tested is probably broken
+    - !slide
+      content: Fast
+      notes: Because if your tests are very fast you work faster - you get through the cycle quicker
+    - !slide
+      content: Focused
+      notes: A test failing should tell you a lot. Ideally, it should tell you exactly where the bug must be.
+  - !group
+    - !slide When to write tests
+    - !group
+      - !slide The most important thing a test can do
+      - !slide
+        title: tests-must-fail
+        content: FAIL
+    - !slide Write tests first
+    - !slide When you know the interface
+    - !slide As soon as you notice they're missing
+- !group
+  - !slide |
+    Questions?
+- !group
+  - !slide Bonus Material
+  - !slide Testing in Node.js
+  - !slide |
+      * I've heard of
+      *(1) Expresso
+      *(2) node-unit
+      *(3) ... but I don't know
+  - !group
+    - !slide Coverage
+    - !slide karma-coverage
+    - !slide "!coverage-summary.png!"
+    - !slide "!coverage-file.png!"
+    - !slide "!coverage-focus.png!"
