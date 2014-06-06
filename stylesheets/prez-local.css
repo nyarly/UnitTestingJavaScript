@@ -1,0 +1,7 @@
+#tests-must-fail {
+  font-size: 20vh;
+  color: red;
+  text-shadow: 0 2px 60px rgba(0, 0, 0, 0.9);
+  background-image: -moz-linear-gradient(#c0c0c0, #111111);
+  background-image: -webkit-linear-gradient(#c0c0c0, #111111);
+  background-image: linear-gradient(#c0c0c0, #111111); }
